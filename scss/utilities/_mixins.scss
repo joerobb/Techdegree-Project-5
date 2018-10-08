@@ -1,0 +1,26 @@
+//Media Queries
+@mixin mq($break) {
+  @if $break == "small" {
+    @media (min-width: $brk-s) and (max-width: $brk-m) {
+      @content;
+    }
+  }
+  @else if $break == "medium" {
+    @media (min-width: $brk-m + 1){
+      @content;
+    }
+  }
+  @else if $break == "large" {
+    @media (min-width: $brk-l) {
+      @content;
+    }
+  }
+}
+
+//Text Patterns
+@mixin text($size, $l-height:null, $weight:null, $color:null) {
+  font-size: $size;
+  line-height: $l-height;
+  font-weight: $weight;
+  color: $color;
+}
